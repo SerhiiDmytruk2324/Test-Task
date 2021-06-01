@@ -16,13 +16,13 @@ class CreateOrderBooksTable extends Migration
         Schema::create('order_books', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('customer_id')->unsigned();
+            $table->integer('order_id')->unsigned();
             $table->integer('book_id')->unsigned();
 
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('book_id')->references('id')->on('books');
             $table->timestamps();
-            $table->index('sold');
+//            $table->index('sold');
         });
     }
 

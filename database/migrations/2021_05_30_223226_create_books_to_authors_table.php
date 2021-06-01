@@ -21,7 +21,7 @@ class CreateBooksToAuthorsTable extends Migration
 
             $table->foreign('author_id')->references('id')->on('authors');
             $table->foreign('book_id')->references('id')->on('books');
-            $table->index('on_sale');
+//            $table->index('on_sale');
 
             $table->timestamps();
         });
